@@ -24,14 +24,12 @@ export async function POST(req: NextRequest) {
       messages: safeMessages,
     });
 
-    // Log full response so we can debug if needed
     console.log('Claude response:', JSON.stringify(response, null, 2));
 
-    // Safely extract text
     const textBlock = response.content?.find(block => block.type === 'text');
 
     if (!textBlock || textBlock.type !== 'text') {
-      console.error('No text block found in response:', response.content);
+      console.error('No text block found:', response.content);
       return NextResponse.json(
         { error: 'No text response from Claude', reply: 'Sorry, something went wrong. Please try again.' },
         { status: 500 }

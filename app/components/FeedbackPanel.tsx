@@ -3,7 +3,6 @@
 export default function FeedbackPanel({ feedback }: { feedback: string }) {
   if (!feedback) return null;
 
-  // Parse score from feedback text e.g. "Score: 7/10"
   const scoreMatch = feedback.match(/(\d+)\s*\/\s*10/);
   const score = scoreMatch ? parseInt(scoreMatch[1]) : null;
 
@@ -23,7 +22,6 @@ export default function FeedbackPanel({ feedback }: { feedback: string }) {
         )}
       </div>
 
-      {/* Score bar */}
       {score !== null && (
         <div className="w-full bg-gray-700 rounded-full h-2">
           <div

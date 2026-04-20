@@ -2,7 +2,7 @@
 
 type Message = { role: 'user' | 'assistant'; content: string };
 
-export default function InterviewChat({ messages, loading }: { 
+export default function InterviewChat({ messages, loading }: {
   messages: Message[];
   loading: boolean;
 }) {
