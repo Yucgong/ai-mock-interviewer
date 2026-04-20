@@ -84,7 +84,7 @@ app/
 
 ## 👤 Author
 
-**Yu Cheng Gong**  
+**Yucheng Gong**  
 [GitHub](https://github.com/yucgong) · [LinkedIn](https://linkedin.com/in/your-profile)
 
 ---
