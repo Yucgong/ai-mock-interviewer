@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙 AI Mock Interviewer
 
-## Getting Started
+An AI-powered mock interview app that asks you real interview questions, transcribes your spoken answers, and gives you structured feedback with scores — built to help you practice and improve before the real thing.
 
-First, run the development server:
+🔗 **Live Demo**: [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
 
+---
+
+## ✨ Features
+
+- 🤖 **AI-generated questions** — dynamic behavioral and technical questions tailored to your target role
+- 🎙 **Voice answers** — speak your answer and Whisper transcribes it in real time
+- 📊 **Structured feedback** — every answer gets a score out of 10, strengths, areas to improve, and a model answer
+- 🔄 **Multi-turn interview flow** — the interviewer adapts and continues asking questions throughout the session
+- 🧑‍💼 **Role-based interviews** — customize for any job title (Software Engineer, Product Manager, Data Scientist, etc.)
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 14 (App Router), Tailwind CSS |
+| AI Interviewer | Anthropic Claude API |
+| Speech-to-Text | OpenAI Whisper API |
+| Deployment | Vercel |
+
+---
+
+## 🚀 Running Locally
+
+### 1. Clone the repo
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yucgong/ai-mock-interviewer.git
+cd ai-mock-interviewer
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set up environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root:
+```env
+ANTHROPIC_API_KEY=your_anthropic_api_key
+OPENAI_API_KEY=your_openai_api_key
+```
 
-## Learn More
+- Get your Anthropic key at [console.anthropic.com](https://console.anthropic.com)
+- Get your OpenAI key at [platform.openai.com](https://platform.openai.com)
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Start the dev server
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📁 Project Structure
+app/
+├── api/
+│   ├── interview/route.ts    # Claude API — question generation & feedback
+│   └── transcribe/route.ts   # OpenAI Whisper — audio transcription
+├── components/
+│   ├── AudioRecorder.tsx     # Mic recording via MediaRecorder API
+│   ├── InterviewChat.tsx     # Chat message UI
+│   └── FeedbackPanel.tsx     # Score + feedback display
+└── page.tsx                  # Main interview page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔮 Planned Features
+
+- [ ] Save and review past interview sessions
+- [ ] Difficulty levels (Junior / Mid / Senior)
+- [ ] Support for more interview types (case studies, coding challenges)
+- [ ] User authentication and history dashboard
+
+---
+
+## 👤 Author
+
+**Yu Cheng Gong**  
+[GitHub](https://github.com/yucgong) · [LinkedIn](https://linkedin.com/in/your-profile)
+
+---
+
+## 📄 License
+
+MIT
